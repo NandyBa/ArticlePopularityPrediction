@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %} 
+
+{% block description %}
+
+
+{% if win == True %}
+	<h2>Vous avez fait une bonne rédiction</h2>
+	{% if user_prediction == True %}
+		<p>Il s'agissait bien d'un article ayant été partagé plus de 1400 fois</p>
+	{% else %}
+		<p>Article n'a pas eu le succes escompté</p>
+	{% endif %}
+	<a href="/">Retour à l'accueil</a>
+{% else %}
+	<h2>Votre prédiction n'était pas la bonne <a href="/ticket">retenter votre chance</a></h2>
+{% endif %}
+
+
+
+{% if modelprediction == True %}
+	<p>Le model quand a lui avait prédit le bon résultat</p>
+{% else %}
+	<p>Le model quand s'est trompé cette fois-ci mais, il à le bon résultat 66% du temps</p>
+{% endif %}
+
+
+
+
+ {% endblock %}

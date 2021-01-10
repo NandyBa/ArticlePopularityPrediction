@@ -1,0 +1,16 @@
+FROM python:slim
+
+RUN pip3 install flask
+RUN pip3 install flask_bootstrap
+RUN pip3 install wtforms
+RUN pip3 install flask_wtf
+RUN pip3 install joblib
+RUN pip3 install sklearn
+RUN pip3 install pandas
+RUN pip3 install numpy
+RUN pip3 install matplotlib
+
+ADD . .
+EXPOSE 80
+
+CMD ["python", "flaskapp.py"]
